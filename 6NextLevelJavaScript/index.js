@@ -14,8 +14,6 @@ ${word2}
 console.log(example)
 //document.getElementById('example').innerText = example;
 
-
-
 //////////// Destructuring Objects ////////////
 const player = {
     playerName: 'Lebron James',
@@ -33,8 +31,6 @@ const { playerName, club, address: { city } } = player;
   
 console.log(`${playerName} lives in ${city}`);
 
-
-
 const student = {
     name: "Kyle",
     age: 24,
@@ -50,7 +46,6 @@ console.log(age);
 
 console.log(diceGame);
 
-
 //////////// Destructuring Array ////////////
 let names = ['Dylan', 'Coding God', 'Israel'];
 
@@ -62,9 +57,6 @@ console.log(middleName)
 
 console.log(lastName)
 
-
-
-
 //////////// Object Literal ////////////
 function addressMaker(city, state) {
   //const newAdress = {newCity: city, newState: state};
@@ -74,7 +66,6 @@ function addressMaker(city, state) {
 }
 
 addressMaker('Austin', 'Texas');
-
 
 function addressMakerPractice(address) {
   const {city, state} = address
@@ -87,8 +78,6 @@ function addressMakerPractice(address) {
 }
 
 addressMakerPractice({city: 'Austin', state: 'Texas'});
-
-
 
 //////////// for of loop //////////// 
 let incomes = [62000, 67000, 75000];
@@ -106,7 +95,6 @@ for (const char of fullName) {
     console.log(char);
 }
 
-
 const students = [ 
   { studentName: "John", studentCity: "New York" },
   { studentName: "Peter", studentCity: "Paris"},
@@ -117,9 +105,7 @@ for( const student of students ) {
   console.log( student.studentName + " lives in " + student.studentCity);
 }
 
-
 //////////// Spread operator //////////// 
-
 let contacts = ["Mary", "Joel", "Danny"];
 
 let personalFriends = [ "David", ...contacts, "Lily" ];
@@ -146,15 +132,12 @@ let shoppingBasket = ["bread", ...shoppingList, "Lemon"];
 console.log(shoppingBasket);
 
 //////////// Rest operator //////////// 
-
 function add(...nums) {
     
   console.log(nums);
 }
 
 add(4, 5, 7, 8, 12)
-
-
 
 //////////// Arrow function //////////// 
 //function declaration
@@ -177,7 +160,6 @@ const dinnerMenu = food => `I'm going to eat a ${food} for dinner`;
 
 console.log( dinnerMenu("chicken salad") );
 
-
 //////////// Defualt parameter //////////// 
 const leadSinger = (artist = "someone") => {
   console.log(`${artist} is the lead singer of Cold Play`);
@@ -191,7 +173,6 @@ const foodShopping = (food = "something") => {
 }
 foodShopping()
 foodShopping("milk")
-
 
 //////////// includes() -> return true or false//////////// 
 let numArray = [1,2,3,4,5];
@@ -217,7 +198,6 @@ exampleObject.firstName = 'Dylan';
 console.log(exampleObject)
 
 //////////// import & export ////////////
-
 //import { data } from './example.js';
 const data = require('./example.js');
 
@@ -234,7 +214,6 @@ const addImport = require('./data.js')
 let result = addImport(3, 2);
 
 console.log(result);
-
 
 //////////// padStart() & padEnd() ////////////
 let examplePad = 'Dylan';
@@ -271,7 +250,6 @@ let catInheritance = new Cat("cat", 4)
 catInheritance.makeNoise()
 console.log(catInheritance.metaData)
 
-
 //////////// Trailing Commas ////////////
 function add(param1,){
   const example = {
@@ -284,7 +262,6 @@ add(2);
 
 //////////// Promises ////////////
 // * Docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 const buyFlightTicket = () => {
   return new Promise( (resolve, reject) => {
       setTimeout( () => {
@@ -303,7 +280,6 @@ buyFlightTicket()
 .then( (success) => console.log(success))
 .catch( (error) => console.log(error) );
 
-
 const userData = new Promise((resolve, reject) => {
   const error = false;
   
@@ -321,7 +297,6 @@ const userData = new Promise((resolve, reject) => {
 userData
   .then((data) => console.log(data))
   .catch((error) => console.log(error));
-
 
 //////////// fetch ////////////
 /* RESTFul API - https://jsonplaceholder.typicode.com/
@@ -365,7 +340,6 @@ async function photoUpload() {
 
 photoUpload();
 
-
 const apiUrl = "https://api.chucknorris.io/jokes/random";
 
 async function getJoke() {
@@ -376,7 +350,6 @@ async function getJoke() {
   console.log(data.value);
 
 }
-
 getJoke();
 
 //////////// sets ////////////
