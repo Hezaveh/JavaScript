@@ -138,3 +138,19 @@ It forgets the interaction after the response is sent.
 3. Describe a "URL Parameter" in your own words:
    Variable inside the URL that acts as a placeholder for the real value
    (Oftentimes they replace the ID of the resource)
+
+
+At Mike's Bikes, they also sell bike racks (endpoint is /bikeracks).
+
+What would you expect the endpoints to be for the following tasks:
+
+1. Get a list of all bike racks sold on the site?
+/bikeracks
+
+2. Get a list of all bike racks available in the physical store right now?
+   (Assume a query called "available" that is a boolean true/false)
+/bikeracks?available=true  ==> {available: "true"} (Will be parsed as a string)
+
+3. Get a list of all "Thule"-brand bike racks that can hold 4 bikes?
+   (Assume there are "brand" and "numBikes" queries)
+/bikeracks?brand=thule&numBikes=4
