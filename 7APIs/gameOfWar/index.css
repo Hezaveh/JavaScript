@@ -48,3 +48,14 @@ img.card {
 h1, h2 {
     color: white;
 }
+
+div.top {
+    display: flex;
+    align-self: flex-start;
+}
+
+div.top > p {
+    margin: 0;
+    margin-left: 10px;
+    color: white;
+}

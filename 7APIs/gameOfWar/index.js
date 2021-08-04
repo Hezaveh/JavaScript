@@ -4,6 +4,8 @@ let yourScore = 0
 const cardsContainer = document.getElementById("cards")
 const newDeckBtn = document.getElementById("new-deck")
 const drawCardBtn = document.getElementById("draw-cards")
+const remainingText = document.getElementById("remaining")
+const title = document.getElementById("title")
 drawCardBtn.disabled = true;
 
 function handleClick() {
@@ -19,7 +21,8 @@ function handleClick() {
         yourScore = 0
         document.getElementById("computer").innerHTML = "Computer: 0"
         document.getElementById("me").innerHTML = "Me: 0" 
-        document.getElementById("title").innerHTML = "WAR!"
+        title.innerHTML = "WAR!"
+        remainingText.textContent = `Remaining cards: 52`
         cardsContainer.children[0].innerHTML = ""
         cardsContainer.children[1].innerHTML = ""
 }
@@ -31,6 +34,7 @@ drawCardBtn.addEventListener("click", () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            remainingText.textContent = `Remaining cards: ${data.remaining}`
             cardsContainer.children[0].innerHTML = `
                 <img src=${data.cards[0].image} class="card" />
             `
@@ -76,11 +80,11 @@ drawCardBtn.addEventListener("click", () => {
 
             if(data.remaining == 0 && computerScore > yourScore){
                 console.log("done!")
-                document.getElementById("title").innerHTML = "You Lose!"
+                title.innerHTML = "You Lose!"
                 drawCardBtn.disabled = true;
             }else if(data.remaining == 0 && computerScore < yourScore){
                 console.log("done!")
-                document.getElementById("title").innerHTML = "You Win!"
+                title.innerHTML = "You Win!"
                 drawCardBtn.disabled = true;
             }else{
                 winner(card0, card1)
