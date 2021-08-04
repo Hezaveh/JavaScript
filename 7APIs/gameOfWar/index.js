@@ -137,7 +137,7 @@ function determineCardWinner(card1, card2) {
 
 
 
-/* // hhow to use async/await insted of .then
+/* // how to use async/await insted of .then
 async function handleClick() {
     const response = await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
     const data = await res.json()
