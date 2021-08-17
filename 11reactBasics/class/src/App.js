@@ -1,34 +1,58 @@
 import React from "react"
 
-// Given a stateless functional component, add state to it
-// state should have a property called `isLoggedIn` which is a boolean
-// (true if logged in, false if not)
-// Then, give your best shot at rendering the word "in" if the user is logged in
-// or "out" if the user is logged out.
+// https://reactjs.org/docs/events.html#supported-events
 
-class App extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            isLoggedIn: false
-        }
-    }
-    render() {
-        let wordDisplay
-        if (this.state.isLoggedIn === true) {
-            wordDisplay = "in"
-        } else {
-            wordDisplay = "out"
-        }
-        return (
-            <div>
-                <h1>You are currently logged {wordDisplay}</h1>
-            </div>
-        )
-    }
+function handleClick() {
+    console.log("I was clicked")
+}
+
+function App() {
+    return (
+        <div>
+            <img onMouseOver={() => console.log("Hovered!")} src="https://www.fillmurray.com/200/100" />
+            <br />
+            <br />
+            <button onClick={handleClick}>Click me</button>
+        </div>
+    )
 }
 
 export default App
+
+
+
+
+// import React from "react"
+
+// // Given a stateless functional component, add state to it
+// // state should have a property called `isLoggedIn` which is a boolean
+// // (true if logged in, false if not)
+// // Then, give your best shot at rendering the word "in" if the user is logged in
+// // or "out" if the user is logged out.
+
+// class App extends React.Component {
+//     constructor(){
+//         super()
+//         this.state = {
+//             isLoggedIn: false
+//         }
+//     }
+//     render() {
+//         let wordDisplay
+//         if (this.state.isLoggedIn === true) {
+//             wordDisplay = "in"
+//         } else {
+//             wordDisplay = "out"
+//         }
+//         return (
+//             <div>
+//                 <h1>You are currently logged {wordDisplay}</h1>
+//             </div>
+//         )
+//     }
+// }
+
+// export default App
 
 
 
